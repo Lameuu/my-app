@@ -2,23 +2,42 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const nome = 'Lameu';
+  const idade = 18;
+
+  const saudacao = () => "Ola tudo bem ?"
+
+  const pessoas = [
+    {
+      nome: "Ivo",
+      profissao: "Professor"
+    },
+
+    {
+      nome: "Maria",
+      profissao: "Medica"
+    },
+
+    {
+      nome: "Joao",
+      profissao: "Professor"
+    }
+  ]
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div>
+
+    <h1 className='titulo'>Meu nome é {nome}</h1>
+    <p>É maior de idade? {idade >= 18 ? "Sim" : "Não"} </p>
+    <ul>
+      {pessoas.map(pessoa =>(
+        <li>{pessoa.nome} - {pessoa.profissao}</li>
+      ))}
+    </ul>
+
+ </div>
   );
 }
 
